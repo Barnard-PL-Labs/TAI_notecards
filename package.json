@@ -1,0 +1,23 @@
+{
+  "name": "tai_notecards",
+  "version": "1.0.0",
+  "description": "a educational webapp for tangible ai with notecards",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Barnard-PL-Labs/TAI_notecards.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Barnard-PL-Labs/TAI_notecards/issues"
+  },
+  "homepage": "https://github.com/Barnard-PL-Labs/TAI_notecards#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "tesseract.js": "^2.1.4"
+  }
+}
