@@ -9,7 +9,8 @@ playButton.addEventListener('click', function () {
         'eng',
         { logger: m => console.log(m) }
     ).then(({ data: { text } }) => {
-        document.getElementById("output_paragraph").innerHTML = text;
+        document.getElementById("result").innerHTML = "Output:";
+        document.getElementById("output_container").innerHTML += "<p>" + text + "</p>";
         console.log(text);
     })
 
