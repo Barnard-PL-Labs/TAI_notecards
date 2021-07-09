@@ -16,37 +16,56 @@ playButton.addEventListener('click', function () {
 
 }, false);
 
-var x = document.getElementById("YourLocation");
+const api = '3627af5d1db69a65287a5897f4d0c704';
+const tempC = document.querySelector('.c');
 
-//permission to give location data
-function getLocation(){
+window.addEventListener('load', () => {
+    let long;
+    let lat;
+
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-      } else { 
-        x.innerHTML = "Geolocation is not supported by this browser.";
-      }
-}
-//gets latitude and longitude
-    function showPosition(position) {
-        x.innerHTML = "Latitude: " + position.coords.latitude + 
-        "<br>Longitude: " + position.coords.longitude;
-      }
-import axios from 'axios';
+        navigator.geolocation.getCurrentPosition((position) => {
+            long = position.coords.longitude;
+            lat = position.coords.latitude;
+            const base = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${api}&units=metric`;
+            fetch(base)
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    const temp = data.main;
+                    const cTemp = `${temp.toFixed(2)}`;
+                    tempC.textContent = cTemp + ' °C';
 
-//API specific settings
-const API_URL = 'https://api.openweathermap.org/data/2.5/weather?zip=';
-const API_KEY = '3627af5d1db69a65287a5897f4d0c704';
-const LOCATION_ZIP_CODE = '01002';
-const COUNTRY_CODE = 'us';
-const ENTIRE_API_URL = `${API_URL}${LOCATION_ZIP_CODE},${COUNTRY_CODE}&appid=${API_KEY}`;
-axios.get(ENTIRE_API_URL)
-    .then(response => console.log(response))
-    .catch(error => console.log('Error', error));
+                    var tempColor = '#FFFFFF';
+                    if ((-25 <= cTemp) && cTemp <= -15) {
+                        tempColor = '#0c426e';
+                    }
+                    if ((-15 < cTemp) && cTemp <= -5) {
+                        tempColor = '#1d66a1';
+                    }
+                    if ((-5 < cTemp) && cTemp <= 5) {
+                        tempColor = '#3489cf';
+                    }
+                    if ((5 < cTemp) && cTemp <= 15) {
+                        tempColor = '#5aadf2';
+                    }
+                    if ((15 < cTemp) && cTemp <= 25) {
+                        tempColor = '#55ab5b';
+                    }
+                    if ((25 < cTemp) && cTemp <= 35) {
+                        tempColor = '#ed9f40';
+                    }
+                    if ((35 < cTemp) && cTemp <= 45) {
+                        tempColor = '#ed5a40';
+                    }
+                    document.body.style.backgroundColor = tempColor;
 
+                });
 
+        });
+    }
 
+});
 
-
-
-
-
+    
