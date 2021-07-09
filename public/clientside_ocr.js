@@ -17,7 +17,8 @@ playButton.addEventListener('click', function () {
 
 }, false);
 
-const api = '3627af5d1db69a65287a5897f4d0c704';
+//insert api
+const api = '*****************';
 const tempC = document.querySelector('.c');
 
 window.addEventListener('load', () => {
@@ -34,9 +35,9 @@ window.addEventListener('load', () => {
                     return response.json();
                 })
                 .then((data) => {
-                    const temp = data.main;
-                    const cTemp = `${temp.toFixed(2)}`;
-                    tempC.textContent = cTemp + ' °C';
+                    const {temp} = data.main;
+                    const cTemp = `${parseFloat(temp).toFixed(2)}`;
+                    tempC.textContent = cTemp + ' \u00B0C';
 
                     var tempColor = '#FFFFFF';
                     if ((-25 <= cTemp) && cTemp <= -15) {
