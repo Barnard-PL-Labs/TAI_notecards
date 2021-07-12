@@ -18,7 +18,7 @@ playButton.addEventListener('click', function () {
 }, false);
 
 //insert api
-const api = '*****************';
+const api = '******************';
 const tempC = document.querySelector('.c');
 
 window.addEventListener('load', () => {
@@ -69,5 +69,3 @@ window.addEventListener('load', () => {
     }
 
 });
-
-    
