@@ -1,3 +1,65 @@
 body {
   background-color: #ffde59;
 }
+
+.contents{
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 2fr repeat(3, 1fr);
+
+}
+
+#aibot_img {
+grid-row-end: span 4;
+}
+
+h1, h2, button {
+  align-self: center;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+}
+
+button {
+  background-color: #ff443a;
+  color: white;
+  width:10rem;
+  margin: auto;
+  border-radius: 1.5rem;
+  border: none;
+  height: 3rem;
+  font-size: 1.5rem;
+}
+
+h1{
+  font-size: 3em;
+  font-weight: 800;
+}
+ 
+h2{
+  font-weight: 400;
+}
+
+@media only all and (max-width: 55em){
+  .contents{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1.5fr 1fr 1fr;
+  
+  }
+
+  h1{
+    grid-row-start: 1;
+
+  }
+
+  #aibot_img{
+    margin: auto;
+
+  }
+} 
+
+
+
+
+
+
