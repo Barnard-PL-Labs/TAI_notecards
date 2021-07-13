@@ -3,15 +3,16 @@ body {
 }
 
 .contents{
-  margin-top: 4rem;
+  margin-top: 15%;
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 2fr repeat(3, 1fr);
-
 }
 
 #aibot_img {
-grid-row-end: span 4;
+  grid-row-end: span 4;
+  height: 30em;
+  margin: auto;
 }
 
 h1, h2, button {
@@ -35,7 +36,7 @@ h1{
   font-size: 3em;
   font-weight: 800;
 }
- 
+
 h2{
   font-weight: 400;
 }
@@ -44,7 +45,7 @@ h2{
   .contents{
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1.5fr 1fr 1fr;
-  
+
   }
 
   h1{
@@ -56,10 +57,4 @@ h2{
     margin: auto;
 
   }
-} 
-
-
-
-
-
-
+}
