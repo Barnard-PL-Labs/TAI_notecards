@@ -9,19 +9,29 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap" rel="stylesheet">
+  
 </head>
 
 <body>
   <div class="contents">
     <img id="aibot_img" src="aibot.png" alt="Cartoon robot named Aibot"></img>
-    <h1>Hi! I'm Aibot and I like to learn.</h1>
-    <h2>Want to teach me something new?</h2>
-    <button type="button"> Yeah! </button>
+    <h1 id="line1">Hi! I'm Aibot and <br> I like to learn.</h1>
+    <h2 id="line2">Want to teach me something new?</h2>
+    <button id="btn" type="button"> Yeah! </button>
+    <div id="photo_booth"> 
+        <video autoplay="true" id="camera"> </video>
+    </div>
+
+    <canvas id="canvas" > </canvas>
+    <div id="picture" alt="The picture taken will appear here"> </div>
   </div>
+
+
 </body>
 
 <script src='https://unpkg.com/tesseract.js@v2.1.0/dist/tesseract.min.js'></script>
-<script src="clientside_ocr.js"> </script>
-<script src="serverhook.js"> </script>
+<!-- <script src="clientside_ocr.js"> </script>
+<script src="serverhook.js"> </script> -->
+<script src="index2.js"></script>
 
 </html>
