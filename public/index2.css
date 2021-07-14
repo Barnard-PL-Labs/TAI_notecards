@@ -1,65 +1,64 @@
 body {
   background-color: #ffde59;
-}
-
-.contents{
-  margin-top: 15%;
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 2fr repeat(3, 1fr);
+  margin-top: 4em;
+  grid-template-columns: 1fr 1.5fr;
+  grid-template-rows: 4fr 1.5fr 5fr;
+  grid-template-areas: "aibot h1"
+                        "aibot h2"
+                        "aibot btn";
 }
 
 #aibot_img {
-  grid-row-end: span 4;
-  height: 30em;
+  grid-area: aibot;
+  height: 45em;
   margin: auto;
+  margin-right: 0;
+  margin-bottom: 0;
 }
 
 h1, h2, button {
-  
   font-family: 'Open Sans', sans-serif;
   text-align: center;
 }
 
-h2{
-  align-self:flex-end;
-}
-
-button {
-  background-color: #ff443a;
-  color: white;
-  width:10rem;
-  margin: auto;
-  border-radius: 1.5rem;
-  border: none;
-  height: 3rem;
-  font-size: 1.5rem;
-  align-self:flex-start;
-}
-
-h1{
-  font-size: 4em;
+h1 {
+  grid-area: h1;
+  font-size: 5em;
   font-weight: 800;
 }
 
-h2{
+h2 {
+  grid-area: h2;
+  font-size: 2em;
   font-weight: 400;
 }
 
+button {
+  grid-area: btn;
+  background-color: #ff443a;
+  color: white;
+  width: 13rem;
+  height: 4.5rem;
+  margin: auto;
+  margin-top: 0;
+  border-radius: 3rem;
+  border: none;
+  font-size: 1.5rem;
+}
+
 @media only all and (max-width: 55em){
-  .contents{
+  body {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1.5fr 1fr 1fr;
 
   }
 
-  h1{
+  h1 {
     grid-row-start: 1;
-
   }
 
-  #aibot_img{
+  #aibot_img {
     margin: auto;
-
   }
 }
