@@ -1,7 +1,7 @@
 body {
   background-color: #ffde59;
   display: grid;
-  margin-top: 4em;
+ 
   grid-template-columns: 1fr 1.5fr;
   grid-template-rows: 4fr 1.5fr 5fr;
   grid-template-areas: "aibot h1"
@@ -11,20 +11,26 @@ body {
 
 #aibot_img {
   grid-area: aibot;
-  height: 45em;
+  height: 40em;
   margin: auto;
   margin-right: 0;
   margin-bottom: 0;
 }
 
-h1, h2, button {
+
+
+h1, h2, h3, button {
   font-family: 'Open Sans', sans-serif;
   text-align: center;
 }
 
+a{
+  text-decoration: none;
+}
+
 h1 {
   grid-area: h1;
-  font-size: 5em;
+  font-size: 4.5em;
   font-weight: 800;
 }
 
@@ -34,7 +40,13 @@ h2 {
   font-weight: 400;
 }
 
-button {
+h3{
+  grid-area: h3;
+  font-size: 1.5em;
+  font-weight: 200;
+}
+
+button, a {
   grid-area: btn;
   background-color: #ff443a;
   color: white;
