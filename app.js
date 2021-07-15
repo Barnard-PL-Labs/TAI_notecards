@@ -21,7 +21,7 @@ app.get('/weather', function(req, res) {
   console.log("checking weather on server");
   console.log(req.query.weatherZipData);
 
-  const api = '7fe6230d691a3a4e6a2f17bc70a46f13';
+  const api = '*********************';
 
   var zipcode = req.query.weatherZipData;
 
