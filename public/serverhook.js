@@ -9,3 +9,13 @@ playButton2.addEventListener('click', function () {
 	    });
 }, false);
 
+const weatherButton = document.getElementById('weather_button');
+
+weatherButton.addEventListener('click', function () {
+  console.log("start")
+  var weatherZip = document.getElementById("weather_zip").value;
+  $.get("/weather", {weatherZipData: weatherZip}, function(result) {
+  console.log(result);
+  document.body.style.backgroundColor = result;
+    });
+}, false);

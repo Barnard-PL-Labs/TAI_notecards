@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/Barnard-PL-Labs/TAI_notecards#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
+    "node-fetch": "^2.6.1",
     "tesseract.js": "^2.1.4"
   }
 }
