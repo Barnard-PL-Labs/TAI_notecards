@@ -1,8 +1,13 @@
+
 const switcher = document.getElementById('btn');
 var counter = 0;
-var canvas = document.getElementById('canvas');
-var picture = document.getElementById('picture');
-var liveVideo = document.getElementById('camera');
+const webcamElement = document.getElementById('webcam');
+const canvasElement = document.getElementById('canvas');
+const snapSoundElement = document.getElementById('snapSound');
+const webcam = new Webcam(webcamElement, 'user', canvasElement, snapSoundElement);
+
+
+
 
 switcher.addEventListener('click', function () {
     counter++;
@@ -15,32 +20,40 @@ switcher.addEventListener('click', function () {
     }
 
     if (counter == 2) {
+        document.getElementById('btn').innerHTML = "Capture →";
+        webcam.start()
+            .then(result => {
+                console.log("webcam started");
+            })
+            .catch(err => {
+                console.log(err);
+            });
 
-        document.getElementById('line1').innerHTML = "Take a picture: ";
-        document.getElementById('btn').innerHTML = "Take photo"
-
-        if (navigator.mediaDevices.getUserMedia) {
-            navigator.mediaDevices.getUserMedia({ liveVideo: true })
-                .then(function (stream) {
-                    liveVideo.srcObject = stream;
-                })
-                .catch(function (error) {
-                    console.log("I cannot access your webcam");
-                });
-        }
     }
     if (counter == 3) {
-        takePicture();
+        document.getElementById('btn').innerHTML = "Translate →";
+        let picture = webcam.snap();
+        picture.transform = "scaleX(-1)";
 
+        document.querySelector('#download-photo').href = picture;
+        webcam.stop();
+        document.getElementById('webcam').style.display = "none";
+
+    }
+    if (counter == 4) {
+    
+            var imageUrl = document.getElementById('download-photo').value;
+            Tesseract.recognize(
+                imageUrl,
+                'eng',
+                { logger: m => console.log(m) }
+            ).then(({ data: { text } }) => {
+                document.getElementById("output_container").innerHTML += "<p>" + text + "</p>";
+                console.log(text);
+            })
+
+        
     }
 
 }, false);
 
-function takePicture(){
-    
-    var ctx = canvas.getContextOf('2d');
-    ctx.drawImage(liveVideo, 0, 0);
-    var image_data= canvas.toDataURL("image_data/png");
-    picture.setAttribute('source', image_data);
-
-}
