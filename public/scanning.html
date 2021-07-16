@@ -5,7 +5,8 @@
   <meta charset="utf‐8">
   <title>Aibot Learns</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="index2.css">
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="scanning.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap" rel="stylesheet">
@@ -13,30 +14,24 @@
 </head>
 
 <body>
-
-  <img id="aibot_img" src="aibot.png" alt="Cartoon robot named Aibot"></img>
-  <h2 id="line1">Scanning</h2>
-  <button id="btn3" type="button">Start camera</button>
-  <!--<button id="btn4" type="button"> Capture → </button>
-  <button id="btn5" type="button">Translate → </button> -->
-  
+  <img class="aibot_img" src="aibotFrontHead.png" alt="Cartoon robot named Aibot"></img>
+  <h1>Scanning...</h1>
+  <button class="greenBtn" id="captureBtn" type="button">
+    <img id="icon" href="cameraIcon"></img>
+  </button>
+  <button class="redBtn" type="button"><a href="">Next →</a></button>
 
   <video id="webcam" autoplay playsinline width="640" height="480" ></video>
-  <canvas id="canvas" class="d-none" ></canvas>
+  <canvas id="canvas" class="d-none"></canvas>
   <audio id="snapSound" src="snap.wav" preload="auto"></audio>
+  <a id="download-photo"></a>
 
-  <a id="download-photo" ></a>
-
-  <div id="output_container">
-    
-  </div>
-
-
+  <div id="output_container"></div>
 </body>
 
 <script src='https://unpkg.com/tesseract.js@v2.1.0/dist/tesseract.min.js'></script>
 <!-- <script src="clientside_ocr.js"> </script>
 <script src="serverhook.js"> </script> -->
-<script src="index2.js"></script>
+<script src="scanning.js"></script>
 
 </html>

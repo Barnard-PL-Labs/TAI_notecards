@@ -1,62 +1,9 @@
 body {
-  background-color: #ffde59;
-  display: grid;
- 
   grid-template-columns: 1fr 1.5fr;
   grid-template-rows: 4fr 1.5fr 5fr;
   grid-template-areas: "aibot h1"
                         "aibot h2"
-                        "aibot btn";
-}
-
-#aibot_img {
-  grid-area: aibot;
-  height: 40em;
-  margin: auto;
-  margin-right: 0;
-  margin-bottom: 0;
-}
-
-
-
-h1, h2, h3, button {
-  font-family: 'Open Sans', sans-serif;
-  text-align: center;
-}
-
-a{
-  text-decoration: none;
-}
-
-h1 {
-  grid-area: h1;
-  font-size: 4.5em;
-  font-weight: 800;
-}
-
-h2 {
-  grid-area: h2;
-  font-size: 2em;
-  font-weight: 400;
-}
-
-h3{
-  grid-area: h3;
-  font-size: 1.5em;
-  font-weight: 200;
-}
-
-button, a {
-  grid-area: btn;
-  background-color: #ff443a;
-  color: white;
-  width: 13rem;
-  height: 4.5rem;
-  margin: auto;
-  margin-top: 0;
-  border-radius: 3rem;
-  border: none;
-  font-size: 1.5rem;
+                        "aibot redBtn";
 }
 
 @media only all and (max-width: 55em){
