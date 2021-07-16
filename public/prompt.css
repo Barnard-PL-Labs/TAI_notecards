@@ -1,0 +1,7 @@
+body {
+  grid-template-columns: 1fr 1.5fr;
+  grid-template-rows: 4fr 1.5fr 5fr;
+  grid-template-areas: "aibot h2"
+                        "aibot h3"
+                        "aibot redBtn";
+}

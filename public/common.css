@@ -1,0 +1,60 @@
+body {
+  background-color: #ffde59;
+  display: grid;
+}
+
+.aibot_img {
+  grid-area: aibot;
+  height: 40rem;
+  margin: auto;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+h1, h2, h3, button {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+}
+
+h1 {
+  grid-area: h1;
+  font-size: 4.5em;
+  font-weight: 800;
+}
+
+h2 {
+  grid-area: h2;
+  font-size: 2em;
+  font-weight: 400;
+}
+
+h3{
+  grid-area: h3;
+  font-size: 1.5em;
+  font-weight: 200;
+}
+
+button {
+  width: 13rem;
+  height: 4.5rem;
+  margin: auto;
+  margin-top: 0;
+  border-radius: 3rem;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.redBtn {
+  grid-area: redBtn;
+  background-color: #ff443a;
+}
+
+.greenBtn {
+  grid-area: greenBtn;
+  background-color: #7ed957;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}

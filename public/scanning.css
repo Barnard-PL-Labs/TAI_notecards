@@ -1,0 +1,30 @@
+body {
+  grid-template-columns: 2fr 3fr 2fr;
+  grid-template-rows: 4fr .5fr 2.39fr;
+  grid-template-areas: "h1 webcam ."
+                        ". . redBtn"
+                        ". aibot .";
+ margin-bottom: 0;
+}
+
+.aibot_img {
+  height: 20rem;
+  margin: auto;
+  margin-bottom: 0;
+}
+
+#captureBtn {
+  z-index: 2;
+}
+
+#icon {
+  z-index: 3;
+  height: 5em;
+  width: 5em;
+}
+
+#webcam, #canvas, #download-photo, #captureBtn {
+  grid-area: webcam;
+  margin: auto;
+  margin-bottom: 0;
+}
