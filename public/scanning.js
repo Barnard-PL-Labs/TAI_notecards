@@ -3,7 +3,10 @@ const webcamElement = document.getElementById('webcam');
 const canvasElement = document.getElementById('canvas');
 const snapSoundElement = document.getElementById('snapSound');
 const webcam = new Webcam(webcamElement, 'user', canvasElement, snapSoundElement);
-
+/*
+var ctx = canvasElement.getContext('2d');
+ctx.scale(-1, 1);
+*/
 window.addEventListener('load', function(){
     webcam.start()
     .then(result => {
@@ -12,6 +15,7 @@ window.addEventListener('load', function(){
     .catch(err => {
         console.log(err);
     });
+
 }, false);
 
 const capture = document.getElementById('captureBtn');

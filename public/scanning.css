@@ -15,16 +15,21 @@ body {
 
 #captureBtn {
   z-index: 2;
+  height: 3.2em;
+  width: 3.2em;
 }
 
 #icon {
   z-index: 3;
-  height: 5em;
-  width: 5em;
+  height: 2em;
 }
 
 #webcam, #canvas, #download-photo, #captureBtn {
   grid-area: webcam;
   margin: auto;
   margin-bottom: 0;
+}
+
+#captureBtn{
+  margin-bottom: .5em;
 }
