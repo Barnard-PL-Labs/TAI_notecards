@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap" rel="stylesheet">
-  <script type="text/javascript" src="webcam-easy.js"></script>
+
 </head>
 
 <body>
@@ -19,19 +19,20 @@
   <button class="greenBtn" id="captureBtn" type="button">
     <img id="icon" src="cameraIcon.png"></img>
   </button>
-  <button class="redBtn" type="button"><a href="">Next →</a></button>
+  <button id="nextBtn" class="redBtn" type="button"><a href="translating.html">Next →</a></button>
 
   <video id="webcam" autoplay playsinline width="640" height="480" ></video>
   <canvas id="canvas" class="d-none"></canvas>
   <audio id="snapSound" src="snap.wav" preload="auto"></audio>
   <a id="download-photo"></a>
 
-  <div id="output_container"></div>
+ 
 </body>
 
 <script src='https://unpkg.com/tesseract.js@v2.1.0/dist/tesseract.min.js'></script>
 <!-- <script src="clientside_ocr.js"> </script>
 <script src="serverhook.js"> </script> -->
+<script type="text/javascript" src="webcam-easy.js"></script>
 <script src="scanning.js"></script>
 
 </html>
