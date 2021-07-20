@@ -1,4 +1,10 @@
 var imageUrl = localStorage.getItem("picUrl");
+if (localStorage.getItem("notecards") == null){
+    var tempArr =[];
+} else {
+   tempArr = JSON.parse(localStorage.getItem("notecards"));
+}
+
 
 window.addEventListener('load', function(){
     Tesseract.recognize(
@@ -8,6 +14,10 @@ window.addEventListener('load', function(){
         { logger: m => console.log(m) }
     ).then(({ data: { text } }) => {
         document.getElementById("output_container").innerHTML += "<p>" + text + "</p>";
-        console.log(text);
+        tempArr.push(text);
+        localStorage.setItem("notecards",  JSON.stringify(tempArr));
+        console.log(tempArr);
     })
 }, false);
+
+

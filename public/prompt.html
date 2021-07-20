@@ -14,12 +14,13 @@
 
 <body>
   <img class="aibot_img" src="aibot.png" alt="Cartoon robot named Aibot"></img>
-  <h2>I don't know what a fruit is.<br>Can you show me some examples?</h2>
+  <h2>I don't know what <span id="a/an"></span> <span id="mysteryWord"></span> is.<br>Can you show me some examples?</h2>
   <h3>You can scan your examples through my webcam.</h3>
   <button class="redBtn" type="button"><a href="scanning.html">Begin scanning →</a></button>
 </body>
 
 <script src='https://unpkg.com/tesseract.js@v2.1.0/dist/tesseract.min.js'></script>
+<script src="prompt.js"></script>
 <!-- <script src="clientside_ocr.js"> </script>
 <script src="serverhook.js"> </script> -->
 
