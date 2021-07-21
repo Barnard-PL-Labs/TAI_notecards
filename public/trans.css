@@ -1,7 +1,10 @@
 body {
-grid-template-areas: "greenBtn redBtn"
-                      "output .";
+grid-template-areas: "output doneBtn"
+ 
 
+}
+#doneBtn{
+grid-area: doneBtn;
 }
 
 #output_container{
