@@ -17,7 +17,7 @@ body {
     grid-row-start: 1;
   }
 
-  #aibot_img {
+  .aibot_img {
     margin: auto;
   }
 }

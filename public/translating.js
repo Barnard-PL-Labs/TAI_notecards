@@ -26,8 +26,7 @@ window.addEventListener('load', function(){
     localStorage.setItem("notecards", JSON.stringify(popArr.push(document.getElementsByClassName(text))));
 }, false);*/
 
-document.addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
+document.getElementById('submitBtn').addEventListener('click', function() {
         console.log("WORKING");
         var arr = JSON.parse(localStorage.getItem("notecards"));
         console.log("Oh NO");
@@ -36,7 +35,7 @@ document.addEventListener('keypress', function(e) {
         arr.push(document.getElementById('output_container').innerHTML);
         console.log("array is " + arr);
         localStorage.setItem("notecards", JSON.stringify(arr));
-      }
+      
    
 });
 

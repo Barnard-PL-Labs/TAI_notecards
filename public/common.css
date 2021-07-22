@@ -1,6 +1,8 @@
+
 body {
   background-color: #ffde59;
   display: grid;
+  margin: auto;
 }
 
 .aibot_img {
