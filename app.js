@@ -1,6 +1,7 @@
 const express = require('express')
 const serversideOCR = require('./server/serverside_ocr')
 const fetch = require('node-fetch');
+const serverSideGPT3 = require('./server/serverside_gpt3');
 
 
 const app = express()
@@ -21,7 +22,7 @@ app.get('/weather', function(req, res) {
   console.log("checking weather on server");
   console.log(req.query.weatherZipData);
 
-  const api = '*********************';
+  const api = '7fe6230d691a3a4e6a2f17bc70a46f13';
 
   var zipcode = req.query.weatherZipData;
 
@@ -60,6 +61,17 @@ app.get('/weather', function(req, res) {
 
       });
 });
+
+app.get('/gpt-3', function(req, res) {
+  console.log("starting chatbox on server");
+  console.log(req.query.chatData);
+  //TODO need to wait for this to finish before we do res.send(result)
+  var result = serversideGPT3.runGPT3(req.query.chatData);
+  console.log(result);
+  res.send(result);
+});
+
+
 
 app.listen(port, () => {
   console.log(`app listening at http://localhost:${port}`)
