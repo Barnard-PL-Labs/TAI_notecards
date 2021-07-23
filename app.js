@@ -12,10 +12,13 @@ app.use(express.static('public'))
 app.get('/ocr', function (req, res) {
     console.log("starting ocr on server");
     console.log(req.query.imageUrlData);
-    //TODO need to wait for this to finish before we do res.send(result)
     var result = serversideOCR.runOcr(req.query.imageUrlData);
-    console.log(result);
-    res.send(result);
+    result.then(val => {
+        console.log(val);
+        res.send(val);
+    }).catch(e => {
+        console.log(e);
+    });
 });
 
 app.get('/weather', function (req, res) {
@@ -62,13 +65,18 @@ app.get('/weather', function (req, res) {
         });
 });
 
-app.get('/gpt-3', function (req, res) {
+app.get('/gpt-3', async function (req, res) {
     console.log("starting chatbox on server");
     console.log(req.query.chatData);
-    //TODO need to wait for this to finish before we do res.send(result)
     var result = serversideGPT3.runGPT3(req.query.chatData);
-    console.log("I have the result: " + result);
-    res.send(result);
+    result.then(val => {
+        console.log(val);
+        console.log("RESPONSE TEXT: " + val.choices[0].text);
+        res.send(val);
+    }).catch(e => {
+        console.log(e);
+    });
+
 });
 
 
