@@ -1,7 +1,38 @@
+
 body {
   grid-template-columns: 1fr 1.5fr;
-  grid-template-rows: 4fr 1.5fr 5fr;
+  grid-template-rows: 4fr 4fr 13fr;
   grid-template-areas: "aibot h2"
                         "aibot h3"
                         "aibot redBtn";
+}
+
+
+h2{
+  margin-bottom: 0;
+  margin-top: 2em;
+}
+
+h3{
+align-self: end;
+}
+
+.redBtn{
+  margin-top: 2em;
+}
+
+@media only all and (max-width: 55em){
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1.5fr 1fr 1fr;
+
+  }
+
+  h2 {
+    grid-row-start: 1;
+  }
+
+  .aibot_img {
+    margin: auto;
+  }
 }

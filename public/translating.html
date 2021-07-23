@@ -10,18 +10,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap" rel="stylesheet">
-  
+
 </head>
 
 <body>
-  <div id="output_container" contenteditable>
-  </div>
- <!-- 
-  <button class="greenBtn" id="finishBtn" type="button">Finish</button>
-  <button id="addBtn" class="redBtn" type="button"><a href="scanning.html">Add Data</a></button>
---> 
-<button id="doneBtn" class="redBtn" type="button"><a href ="adding.html">Next</a></button>
+  <img class="aibot_img" src="aibot.png" alt="Cartoon robot named Aibot"></img>
+  <h2 id="question">Is this what you wrote?</h2>
+  <h3>If not, you can edit:</h3>
 
+  <div id="edit">
+    <h3 type="text" id="output_container" contenteditable>
+    </h3>
+    <button id="submitBtn" class="greenBtn" type="button">Submit</button>
+  </div>
+
+  <button id="doneBtn" class="redBtn" type="button"><a href="adding.html">Next</a></button>
 </body>
 
 <script src='https://unpkg.com/tesseract.js@v2.1.0/dist/tesseract.min.js'></script>

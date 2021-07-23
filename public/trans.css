@@ -1,12 +1,37 @@
 body {
-grid-template-areas: "output doneBtn"
- 
-
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: 1fr  1fr 1.5fr 5fr;
+    grid-template-areas: "aibot question"
+                        " aibot h3"
+                          "aibot edit"
+                          "aibot redBtn";
+  
 }
-#doneBtn{
-grid-area: doneBtn;
+
+#question{
+    grid-area: question;}
+
+#edit{
+    grid-area: edit;
+    margin:auto;
 }
 
 #output_container{
-    grid-area: output;
+    border:2px black solid;
 }
+
+#output_container, #submitBtn{
+    display: inline;
+}
+
+.greenBtn{
+    border-radius: 0;
+    width:4rem; 
+    height: 1.5rem;
+    font-size: .8rem;
+
+}
+
+
+
+
