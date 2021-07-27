@@ -39,7 +39,7 @@ app.get('/weather', function (req, res) {
     console.log("checking weather on server");
     console.log(req.query.weatherZipData);
 
-    const api = '7fe6230d691a3a4e6a2f17bc70a46f13';
+    const api = '3627af5d1db69a65287a5897f4d0c704';
 
     var zipcode = req.query.weatherZipData;
 
@@ -78,6 +78,24 @@ app.get('/weather', function (req, res) {
 
         });
 });
+
+
+app.get('/gpt-3', async function (req, res) {
+    console.log("starting chatbox on server");
+    console.log(req.query.chatData);
+    var result = serversideGPT3.runGPT3(req.query.chatData);
+    result.then(val => {
+        console.log(val);
+        console.log("RESPONSE TEXT: " + val.choices[0].text);
+        //document.getElementById("test").innerHTML=val.choices[0].text;
+        res.send(val);
+    }).catch(e => {
+        console.log(e);
+    });
+
+});
+
+
 
 app.listen(port, () => {
     console.log(`app listening at http://localhost:${port}`)

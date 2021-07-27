@@ -16,7 +16,7 @@ playButton.addEventListener('click', function () {
 }, false);
 
 //insert api
-const api = '7fe6230d691a3a4e6a2f17bc70a46f13';
+const api = '3627af5d1db69a65287a5897f4d0c704';
 const tempC = document.querySelector('.c');
 
 window.addEventListener('load', () => {

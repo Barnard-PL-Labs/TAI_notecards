@@ -3,7 +3,8 @@ body {
   grid-template-rows: 4fr 1.5fr 5fr;
   grid-template-areas: "aibot h1"
                         "aibot h2"
-                        "aibot redBtn";
+                        "aibot redBtn";            
+
 }
 
 @media only all and (max-width: 55em){

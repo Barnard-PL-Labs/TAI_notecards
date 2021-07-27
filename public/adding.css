@@ -1,9 +1,32 @@
 body {
-    grid-template-areas: "greenBtn redBtn"
-                          "output .";
-    
+    margin-top: 2em;
+    grid-template-areas: "aibot output output"
+                          "aibot greenBtn redBtn";
     }
     
-    #output_container{
-        grid-area: output;
+#output{
+     grid-area: output;
+     display: grid;
+     grid-auto-flow: column;
+     grid-gap: 3rem;
+    grid-column-gap: 3rem;
     }
+
+h3{
+    z-index: 2;
+    position: absolute;
+    margin: auto;
+}
+
+.paper{
+    width: 15rem;
+
+
+}
+
+.card{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
