@@ -3,7 +3,6 @@ const serversideOCR = require('./server/serverside_ocr')
 const fetch = require('node-fetch');
 const serversideGPT3 = require('./server/serverside_gpt3');
 
-
 const app = express()
 const port = 3000
 
@@ -20,6 +19,21 @@ app.get('/ocr', function (req, res) {
         console.log(e);
     });
 });
+
+app.get('/gpt-3', function (req, res) {
+    console.log("starting chatbox on server");
+    console.log(req.query.chatData);
+    var result = serversideGPT3.runGPT3(req.query.chatData);
+    result.then(val => {
+        console.log(val);
+        console.log("RESPONSE TEXT: " + val.choices[0].text);
+        res.send(val);
+    }).catch(e => {
+        console.log(e);
+    });
+
+});
+
 
 app.get('/weather', function (req, res) {
     console.log("checking weather on server");
@@ -64,22 +78,6 @@ app.get('/weather', function (req, res) {
 
         });
 });
-
-app.get('/gpt-3', async function (req, res) {
-    console.log("starting chatbox on server");
-    console.log(req.query.chatData);
-    var result = serversideGPT3.runGPT3(req.query.chatData);
-    result.then(val => {
-        console.log(val);
-        console.log("RESPONSE TEXT: " + val.choices[0].text);
-        res.send(val);
-    }).catch(e => {
-        console.log(e);
-    });
-
-});
-
-
 
 app.listen(port, () => {
     console.log(`app listening at http://localhost:${port}`)

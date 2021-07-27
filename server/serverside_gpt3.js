@@ -2,7 +2,7 @@ const OpenAI = require('openai-api');
 
 // Load your key from an environment variable or secret management service
 // (do not include your key directly in your code)
-const OPENAI_API_KEY = "sk-0C0Njd3aJyPyk8J2nKX4Vyy8AvjUHHll1D6PuF42";
+const OPENAI_API_KEY = "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";
 
 const openai = new OpenAI(OPENAI_API_KEY);
 
@@ -21,8 +21,11 @@ async function runGPT3(myPromt) {
     stream: false,
     stop: ['\n', "testing"]
   });
-
-  return gptResponse.data;
+  /* ask mark what this is for since it does nothing vs commented out
+  var text = gptResponse.data
+  console.log(text);
+  return text;*/
+  //return gptResponse.data;
 };
 
 

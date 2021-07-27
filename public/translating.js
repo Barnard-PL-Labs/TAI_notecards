@@ -5,7 +5,7 @@ if (localStorage.getItem("notecards") == null){
    tempArr = JSON.parse(localStorage.getItem("notecards"));
 }
 
-
+//remember to move this to all serverside 
 window.addEventListener('load', function(){
     Tesseract.recognize(
         /*"https://tesseract.projectnaptha.com/img/eng_bw.png",*/
@@ -35,11 +35,6 @@ document.getElementById('submitBtn').addEventListener('click', function() {
         arr.push(document.getElementById('output_container').innerHTML);
         console.log("array is " + arr);
         localStorage.setItem("notecards", JSON.stringify(arr));
-      
-   
+
+
 });
-
-
-
-
-
