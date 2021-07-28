@@ -9,5 +9,7 @@ if(letter == 'e' || letter == 'a' || letter == 'i' || letter == 'o' || letter ==
 } else {
     document.getElementById('a/an').innerHTML= 'a';}
 
-document.getElementById('mysteryWord').innerHTML = wordsArr[selector];
+document.getElementById('mysteryWord').innerHTML = word;
 console.log(selector);
+
+localStorage.setItem("prompt_word", word);

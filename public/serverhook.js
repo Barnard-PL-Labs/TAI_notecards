@@ -33,6 +33,6 @@ chatButton.addEventListener('click', function() {
   }, function(result) {
     var out = result.choices[0].text;
     console.log(out);
-    document.getElementById("h3").innerHTML = out;
+    document.getElementById("aibots_card").innerHTML = out;
   });
 }, false);
