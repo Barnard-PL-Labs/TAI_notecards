@@ -1,4 +1,4 @@
-const playButton2 = document.getElementById('server_button');
+/*const playButton2 = document.getElementById('server_button');
 
 playButton2.addEventListener('click', function() {
   console.log("start")
@@ -21,7 +21,7 @@ weatherButton.addEventListener('click', function() {
     console.log(result);
     document.body.style.backgroundColor = result;
   });
-}, false);
+}, false);*/
 
 const chatButton = document.getElementById("get_response");
 
@@ -33,6 +33,6 @@ chatButton.addEventListener('click', function() {
   }, function(result) {
     var out = result.choices[0].text;
     console.log(out);
-    document.getElementById("test").innerHTML = out;
+    document.getElementById("h3").innerHTML = out;
   });
 }, false);

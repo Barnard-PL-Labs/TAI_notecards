@@ -4,42 +4,32 @@ const OpenAI = require('openai-api');
 // (do not include your key directly in your code)
 
 
-const OPENAI_API_KEY = "**********************";
+const OPENAI_API_KEY = "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";
 
 
 const openai = new OpenAI(OPENAI_API_KEY);
 
 async function runGPT3(myPromt) {
-
-
-  (async () => {
-    const gptResponse = await openai.complete({
-      engine: 'davinci',
-      prompt: myPromt,
-      maxTokens: 5,
-      temperature: 0.9,
-      topP: 1,
-      presencePenalty: 0,
-      frequencyPenalty: 0,
-      bestOf: 1,
-      n: 1,
-      stream: false,
-      stop: ['\n', "testing"]
-    })
-    console.log(gptResponse.data);
-  })().then((value) => {
-    console.log("Here is my data: " + value);
-    return value.data;
-
+  const gptResponse = await openai.complete({
+    engine: 'davinci',
+    prompt: myPromt,
+    maxTokens: 5,
+    temperature: 0.9,
+    topP: 1,
+    presencePenalty: 0,
+    frequencyPenalty: 0,
+    bestOf: 1,
+    n: 1,
+    stream: false,
+    stop: ['\n', "testing"]
   });
   /* ask mark what this is for since it does nothing vs commented out
   var text = gptResponse.data
   console.log(text);
   return text;*/
-  //return gptResponse.data;
+  return gptResponse.data;
 };
 
 
 
 exports.runGPT3 = runGPT3;
-
