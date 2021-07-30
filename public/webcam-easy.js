@@ -177,6 +177,12 @@ class Webcam {
         context.clearRect(0, 0, this._canvasElement.width, this._canvasElement.height);
         context.drawImage(this._webcamElement, 0, 0, this._canvasElement.width, this._canvasElement.height);
         let data = this._canvasElement.toDataURL('image/png');
+        // console.log(data);
+      //   var blobData;
+      //   this._canvasElement.toBlob( blob => {
+      //     blobData = window.URL.createObjectURL(blob);
+      // });
+      
         return data;
       }
       else{

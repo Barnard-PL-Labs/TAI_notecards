@@ -10,7 +10,7 @@ playButton2.addEventListener('click', function() {
   });
 }, false);
 
-const weatherButton = document.getElementById('weather_button');
+/*const weatherButton = document.getElementById('weather_button');
 
 weatherButton.addEventListener('click', function() {
   console.log("start")
