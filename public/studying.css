@@ -1,0 +1,29 @@
+body {
+    margin-top: 2em;
+    grid-template-areas: ". h1 ."
+                          "gear1 output gear2"
+                          ". aibotBackHead .";
+}
+
+h1 {
+    grid-area: h1;
+}
+
+#backHead {
+  grid-area: aibotBackHead;
+  z-index: 2;
+  margin: auto;
+}
+
+#gear1 {
+  grid-area: gear1;
+}
+
+#gear2 {
+  grid-area: gear2;
+}
+
+.gears {
+  width: 20em;
+  margin: auto;
+}

@@ -1,3 +1,3 @@
-setTimeout(function(){
-    window.location.href = 'response.html';
-}, 5000);
+setTimeout(function() {
+    window.location.href = "response.html";
+  }, 5000);
