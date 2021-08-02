@@ -1,16 +1,30 @@
 document.getElementById("indefArt").innerHTML = localStorage.getItem('aORan');
 document.getElementById("theme").innerHTML = localStorage.getItem('prompt_word');
+var category = localStorage.getItem("plural_word");
 
-const chatButton = document.getElementById("get_response");
 
-chatButton.addEventListener('click', function() {
+var notesArr = JSON.parse(localStorage.getItem('notecards'));
+
+var promptString = `The following is a list of ${category}\n\n`;
+for (var i = 0; i < notesArr.length; i++){
+  promptString += notesArr[i] + `\n`;
+}
+
+window.addEventListener('load', function() {
   console.log("start")
-  var humanText = document.getElementById("chat_box").value;
   $.get("/gpt-3", {
-    chatData: humanText
+    examplesData: promptString
   }, function(result) {
     var out = result.choices[0].text;
     console.log(out);
     document.getElementById("aibots_card").innerHTML = out;
   });
 }, false);
+
+var restart = document.getElementById('playBtn');
+restart.addEventListener('click', function() {
+  console.log("restarting")
+  localStorage.clear();
+}, false);
+  
+

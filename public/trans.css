@@ -2,8 +2,8 @@ body {
     grid-template-columns: 1fr 1.5fr;
     grid-template-rows: 1fr  1fr 1.5fr 5fr;
     grid-template-areas: "aibot question"
-                        " aibot h3"
-                          "aibot edit"
+                        " aibot suggestion"
+                          "aibot output_container"
                           "aibot redBtn";
   
 }
@@ -11,26 +11,18 @@ body {
 #question{
     grid-area: question;}
 
-#edit{
-    grid-area: edit;
-    margin:auto;
+
+#suggestion{
+    grid-area: suggestion
 }
 
 #output_container{
+    grid-area:output_container;
     border:2px black solid;
-}
-
-#output_container, #submitBtn{
     display: inline;
+    margin: auto;
 }
 
-.greenBtn{
-    border-radius: 0;
-    width:4rem; 
-    height: 1.5rem;
-    font-size: .8rem;
-
-}
 
 
 

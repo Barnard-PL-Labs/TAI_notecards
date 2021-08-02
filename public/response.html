@@ -6,6 +6,7 @@
   <title>Aibot Learns</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="adding.css">
   <link rel="stylesheet" href="response.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,12 +16,14 @@
 <body>
   <img class="aibot_img" src="aibot.png" alt="Cartoon robot named Aibot"></img>
 
-  <input id="chat_box" type="text"></input>
-  <button id="get_response">enter</button>
+
   <div class="card"><img class="paper" src="note.png" alt="Graphic of a paper note"></img><h3 id="aibots_card"></h3></div>
 
   <h1>Ok. Based on my data, I think another example of <span id="indefArt"></span> <span id="theme"></span> is:</h1>
-
+  <div id="playAgain">
+  <h2>Want to teach me something else?</h2>
+  <button id="playBtn" class="redBtn" type="button"><a href="index.html">Yeah</a></button>
+  </div>
 </body>
 
 <script src='https://unpkg.com/tesseract.js@v2.1.0/dist/tesseract.min.js'></script>

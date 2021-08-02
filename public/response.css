@@ -1,0 +1,23 @@
+body {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:  1fr 1fr;
+    grid-template-areas: "aibot h1 h1"
+                          "aibot card playAgain";
+   margin-bottom: 0;
+   padding-top: 3em;
+  }
+  
+#playAgain{
+    grid-area: playAgain; 
+    margin: auto;
+}
+
+#playAgain button{
+ 
+   display: table;
+}
+
+.card{
+   vertical-align: top;
+}
+

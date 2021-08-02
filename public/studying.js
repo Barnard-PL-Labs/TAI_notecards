@@ -1,3 +1,5 @@
+window.addEventListener('load', function(){
 setTimeout(function() {
-    window.location.href = "response.html";
+    location.href = "response.html";
   }, 5000);
+}, false);

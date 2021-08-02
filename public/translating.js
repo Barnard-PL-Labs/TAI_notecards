@@ -19,7 +19,7 @@ window.addEventListener('load', function() {
   });
 }, false);
 
-document.getElementById('submitBtn').addEventListener('click', function() {
+document.getElementById('doneBtn').addEventListener('click', function() {
         var arr = JSON.parse(localStorage.getItem("notecards"));
         arr.pop();
         arr.push(document.getElementById('output_container').innerHTML);
