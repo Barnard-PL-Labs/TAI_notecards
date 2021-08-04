@@ -6,13 +6,26 @@ if (localStorage.getItem("notecards") == null){
    tempArr = JSON.parse(localStorage.getItem("notecards"));
 }
 
+// window.addEventListener('load', function() {
+//   console.log("start")
+//   $.get("/ocr", {
+//     imageUrlData: imageURL
+//   }, function(result) {
+//     console.log(result);
+//     localStorage.setItem('ocr', result);
+//         document.getElementById("output_container").innerHTML +=  result;
+//         tempArr.push(result);
+//         localStorage.setItem("notecards", JSON.stringify(tempArr));
+//   });
+// }, false);
+
 window.addEventListener('load', function() {
   console.log("start")
-  $.get("/ocr", {
+  $.get("/vision", {
     imageUrlData: imageURL
   }, function(result) {
     console.log(result);
-    localStorage.setItem('ocr', result);
+    localStorage.setItem('vision', result);
         document.getElementById("output_container").innerHTML +=  result;
         tempArr.push(result);
         localStorage.setItem("notecards", JSON.stringify(tempArr));

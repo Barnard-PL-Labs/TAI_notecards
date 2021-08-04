@@ -11,12 +11,16 @@ for (var i = 0; i < notesArr.length; i++){
 }
 
 window.addEventListener('load', function() {
+//var notesArr = JSON.parse(localStorage.getItem('notecards'));
   console.log("start")
   $.get("/gpt-3", {
     examplesData: promptString
   }, function(result) {
     var out = result.choices[0].text;
     console.log(out);
+    if (localStorage.getItem("new") == null){
+      out = notesArr[0];
+    }
     document.getElementById("aibots_card").innerHTML = out;
   });
 }, false);
