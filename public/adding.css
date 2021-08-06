@@ -5,12 +5,14 @@ body {
     }
     
 #output{
+    
      grid-area: output;
      display: grid;
-     grid-template-columns: repeat(auto-fill, minmax(30em, 1fr));
-     grid-template-rows: repeat(auto, 20em);
-     grid-gap: 3rem;
-    grid-column-gap: 3rem;
+     --auto-grid-min-size: 10rem;
+     grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
+   grid-gap: 1rem;
+    
+   
     }
 
 h3{
@@ -20,6 +22,7 @@ h3{
 }
 
 .card{
+    height: auto;
     position: relative;
     display: flex;
     align-items: center;

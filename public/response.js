@@ -16,9 +16,9 @@ window.addEventListener('load', function() {
   $.get("/gpt-3", {
     examplesData: promptString
   }, function(result) {
-    var out = result.choices[0].text;
+    var out = result;
     console.log(out);
-    if (localStorage.getItem("new") == null){
+    if (result == null){
       out = notesArr[0];
     }
     document.getElementById("aibots_card").innerHTML = out;

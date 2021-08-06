@@ -45,9 +45,9 @@ app.get('/gpt-3', function (req, res) {
     
     result.then(val => {
         console.log(val);
-        res.send(val);
-        console.log("New Example: " + val.choices[0].text);
-        localStorage.setItem("new", val.choices[0].text);
+        var answer = val.choices[0].text;
+        console.log("New Example: " + answer);
+        res.send(answer);
         
     }).catch(e => {
         console.log(e);

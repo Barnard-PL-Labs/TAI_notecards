@@ -1,7 +1,7 @@
 // const tesseract = require('tesseract.js');
 
 // async function runOcr(imageUrl) {
-//     var response = await recognizetesseract.(
+//     var response = await tesseract.recognize(
 //         imageUrl,
 //         'eng',
 //         { logger: m => console.log(m), 
