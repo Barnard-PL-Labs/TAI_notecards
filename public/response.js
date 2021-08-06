@@ -24,11 +24,3 @@ window.addEventListener('load', function() {
     document.getElementById("aibots_card").innerHTML = out;
   });
 }, false);
-
-var restart = document.getElementById('playBtn');
-restart.addEventListener('click', function() {
-  console.log("restarting")
-  localStorage.clear();
-}, false);
-  
-

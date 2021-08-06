@@ -2,8 +2,6 @@ const OpenAI = require('openai-api');
 const OPENAI_API_KEY = process.env.API_KEY;
 const openai = new OpenAI(OPENAI_API_KEY);
 
-
-
 async function runGPT3(myPrompt) {
   const gptResponse = await openai.complete({
     engine: 'davinci',
@@ -18,7 +16,7 @@ async function runGPT3(myPrompt) {
     stream: false,
     stop: ['\n', "testing"]
   });
-  
+
   return gptResponse.data;
 };
 

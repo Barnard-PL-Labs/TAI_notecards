@@ -5,7 +5,7 @@ const express = require('express')
 const fetch = require('node-fetch');
 const serversideGPT3 = require('./server/serverside_gpt3');
 const serversideVision = require('./server/serverside_vision');
-
+const imageDataURI = require('image-data-uri');
 
 const app = express()
 const port = 3000
@@ -28,13 +28,17 @@ app.use(express.static('public'))
 app.get('/vision', function (req, res) {
     console.log("starting google_vision on server");
     console.log(req.query.imageUrlData);
-    var result = serversideVision.runVision(req.query.imageUrlData);
-    result.then(val => {
-        console.log(val);
-        res.send(val);
-    }).catch(e => {
-        console.log(e);
-    });
+    let filePath = 'cap.png';
+    imageDataURI.outputFile(req.query.imageUrlData, filePath)
+     .then(fileSaveRes => {
+       var result = serversideVision.runVision(filePath);
+       result.then(val => {
+           console.log(val);
+           res.send(val);
+       }).catch(e => {
+           console.log(e);
+       });
+     });
 });
 
 
@@ -42,13 +46,13 @@ app.get('/gpt-3', function (req, res) {
     console.log("starting gpt-3 on server");
     console.log(req.query.examplesData);
     var result = serversideGPT3.runGPT3(req.query.examplesData);
-    
+
     result.then(val => {
         console.log(val);
         res.send(val);
         console.log("New Example: " + val.choices[0].text);
         localStorage.setItem("new", val.choices[0].text);
-        
+
     }).catch(e => {
         console.log(e);
     });
