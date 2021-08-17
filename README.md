@@ -10,8 +10,8 @@ to install
 1) create a .env file
 2) in that file add the following
 
-API_KEY = "****"
-GOOGLE_APPLICATION_CREDENTIALS = "****"
+   API_KEY = "****"
+   GOOGLE_APPLICATION_CREDENTIALS = "****"
 
 where API_KEY is the key for gpt3 and GOOGLE_APPLICATION_CREDENTIALS is [broken for now, don't bother]
 
