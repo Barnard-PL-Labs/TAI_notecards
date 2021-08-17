@@ -6,9 +6,12 @@ const fetch = require('node-fetch');
 const serversideGPT3 = require('./server/serverside_gpt3');
 const serversideVision = require('./server/serverside_vision');
 const imageDataURI = require('image-data-uri');
+const fs = require('fs');
+const https = require('https');
+
 
 const app = express()
-const port = 3000
+const port = 443
 app.use(express.json({ limit: 500000}));
 
 app.use(express.static('public'))
@@ -59,9 +62,24 @@ app.get('/gpt-3', function (req, res) {
 
 });
 
-app.listen(port, () => {
-    console.log(`app listening at http://localhost:${port}`)
-})
+try {
+var privateKey = fs.readFileSync( 'key.pem' );
+var certificate = fs.readFileSync( 'cert.pem' );
+
+https.createServer({
+	    key: privateKey,
+	    cert: certificate
+}, app).listen(port, () => {
+   console.log(`app listening at https://localhost:${port}`)
+});
+} catch (e) {
+  console.log(e)
+  console.log("HTTPS will not be enabled, HTTP might still work")
+  app.listen(80, () => {
+    console.log(`app listening at http://localhost:80`)
+  })
+}
+
 
 //for running purposes in terminal
 //node  --max-http-header-size=1000000 app.js

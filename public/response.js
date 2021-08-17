@@ -18,7 +18,7 @@ window.addEventListener('load', function() {
   }, function(result) {
     var out = result;
     console.log(out);
-    if (result == null){
+    if (result == null || result == ""){
       out = notesArr[0];
     }
     document.getElementById("aibots_card").innerHTML = out;

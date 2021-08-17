@@ -10,11 +10,16 @@ const client = new vision.ImageAnnotatorClient({
 
 
 async function runVision(imageUrl) {
-        const [response] = await client.documentTextDetection(imageUrl);
-        const detections = response.textAnnotations;
-        const [ words, ...others ] = detections;
-        var text = text.description;
-        console.log(text);
+	try {
+          const [response] = await client.documentTextDetection(imageUrl);
+          const detections = response.textAnnotations;
+          const [ words, ...others ] = detections;
+          var text = text.description;
+          console.log(text);
+	}
+	catch (error) {
+	  console.log(error)
+	}
         return text;
 }
 
