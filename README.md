@@ -1,11 +1,16 @@
 # TAI_notecards
 
-to run
+## Demo
+
+https://www.canva.com/design/DAEjb3NYfQA/S-MK9oXb4Yl04BxMY5az6g/watch?utm_content=DAEjb3NYfQA&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton
+
+
+## to run
 
    npm install
    ./run.sh
 
-to install
+## to install
 
 1) create a .env file
 2) in that file add the following
