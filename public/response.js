@@ -11,7 +11,7 @@ for (var i = 0; i < notesArr.length; i++){
 }
 
 window.addEventListener('load', function() {
-//var notesArr = JSON.parse(localStorage.getItem('notecards'));
+  var notesArr = JSON.parse(localStorage.getItem('notecards'));
   console.log("start")
   $.get("/gpt-3", {
     examplesData: promptString

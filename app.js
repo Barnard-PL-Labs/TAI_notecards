@@ -16,33 +16,33 @@ app.use(express.json({ limit: 500000}));
 
 app.use(express.static('public'))
 
-// app.get('/ocr', function (req, res) {
-//     console.log("starting ocr on server");
-//     console.log(req.query.imageUrlData);
-//     var result = serversideOCR.runOcr(req.query.imageUrlData);
-//     result.then(val => {
-//         console.log(val);
-//         res.send(val);
-//     }).catch(e => {
-//         console.log(e);
-//     });
-// });
-
-app.get('/vision', function (req, res) {
-    console.log("starting google_vision on server");
+app.get('/ocr', function (req, res) {
+    console.log("starting ocr on server");
     console.log(req.query.imageUrlData);
-    let filePath = 'cap.png';
-    imageDataURI.outputFile(req.query.imageUrlData, filePath)
-     .then(fileSaveRes => {
-       var result = serversideVision.runVision(filePath);
-       result.then(val => {
-           console.log(val);
-           res.send(val);
-       }).catch(e => {
-           console.log(e);
-       });
-     });
+    var result = serversideOCR.runOcr(req.query.imageUrlData);
+    result.then(val => {
+        console.log(val);
+        res.send(val);
+    }).catch(e => {
+        console.log(e);
+    });
 });
+
+// app.get('/vision', function (req, res) {
+//     console.log("starting google_vision on server");
+//     console.log(req.query.imageUrlData);
+//     let filePath = 'cap.png';
+//     imageDataURI.outputFile(req.query.imageUrlData, filePath)
+//      .then(fileSaveRes => {
+//        var result = serversideVision.runVision(filePath);
+//        result.then(val => {
+//            console.log(val);
+//            res.send(val);
+//        }).catch(e => {
+//            console.log(e);
+//        });
+//      });
+// });
 
 
 app.get('/gpt-3', function (req, res) {
