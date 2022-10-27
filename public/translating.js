@@ -1,4 +1,4 @@
-var imageURL = localStorage.getItem("picUrl");
+var ocrResult = localStorage.getItem("ocr");
 
 if (localStorage.getItem("notecards") == null){
     var tempArr =[];
@@ -7,17 +7,10 @@ if (localStorage.getItem("notecards") == null){
 }
 
 window.addEventListener('load', function() {
-  console.log("start")
-  $.get("/ocr", {
-    imageUrlData: imageURL
-  }, function(result) {
-    console.log(result);
-    localStorage.setItem('ocr', result);
-        document.getElementById("output_container").innerHTML +=  result;
-        tempArr.push(result);
-        localStorage.setItem("notecards", JSON.stringify(tempArr));
-  });
-}, false);
+  document.getElementById("output_container").innerHTML +=  ocrResult;
+  tempArr.push(ocrResult);
+  localStorage.setItem("notecards", JSON.stringify(tempArr));
+});
 
 // window.addEventListener('load', function() {
 //   console.log("start")

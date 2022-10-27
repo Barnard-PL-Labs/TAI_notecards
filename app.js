@@ -1,10 +1,10 @@
 require('dotenv').config();
 
 const express = require('express')
-//const serversideOCR = require('./server/serverside_ocr')
+const serversideOCR = require('./server/serverside_ocr')
 const fetch = require('node-fetch');
 const serversideGPT3 = require('./server/serverside_gpt3');
-const serversideVision = require('./server/serverside_vision');
+//const serversideVision = require('./server/serverside_vision');
 const imageDataURI = require('image-data-uri');
 const fs = require('fs');
 const https = require('https');
@@ -18,7 +18,7 @@ app.use(express.static('public'))
 
 app.get('/ocr', function (req, res) {
     console.log("starting ocr on server");
-    console.log(req.query.imageUrlData);
+    //console.log(req.query.imageUrlData);
     var result = serversideOCR.runOcr(req.query.imageUrlData);
     result.then(val => {
         console.log(val);
