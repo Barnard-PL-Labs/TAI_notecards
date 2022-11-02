@@ -26,9 +26,9 @@ window.addEventListener('load', function() {
 // }, false);
 
 document.getElementById('doneBtn').addEventListener('click', function() {
-        var arr = JSON.parse(localStorage.getItem("notecards"));
-        arr.pop();
-        arr.push(document.getElementById('output_container').innerHTML);
-        console.log("array is " + arr);
-        localStorage.setItem("notecards", JSON.stringify(arr));
+  var arr = JSON.parse(localStorage.getItem("notecards"));
+  arr.pop();
+  arr.push(document.getElementById('output_container').innerHTML);
+  console.log("array is " + arr);
+  localStorage.setItem("notecards", JSON.stringify(arr));
 });
