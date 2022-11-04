@@ -1,5 +1,6 @@
 document.getElementById("indefArt").innerHTML = localStorage.getItem('aORan');
-document.getElementById("theme").innerHTML = localStorage.getItem('prompt_word');
+var single = localStorage.getItem('prompt_word');
+document.getElementById("theme").innerHTML = single;
 var category = localStorage.getItem("plural_word");
 
 
@@ -7,7 +8,7 @@ var notesArr = JSON.parse(localStorage.getItem('notecards'));
 
 var promptString = `The following is a list of ${category}\n\n`;
 for (var i = 0; i < notesArr.length; i++){
-  promptString += notesArr[i] + `\n`;
+  promptString += notesArr[i] + `\n` + `Show me another ${single}.`;
 }
 
 window.addEventListener('load', function() {

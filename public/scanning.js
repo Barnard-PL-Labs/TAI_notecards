@@ -31,7 +31,7 @@ capture.addEventListener('click', function () {
         .then(({ data: { text } }) => {
         console.log(text)
         localStorage.setItem('ocr', text);
-        //window.location.href = 'translating.html';
+        window.location.href = 'translating.html';
     })
     /*
     $.get("/ocr", {
